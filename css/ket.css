@@ -205,7 +205,7 @@ footer p {
 .splashscreen-bg {
 
 	/* The image used */
-	background-image: url("https://images.unsplash.com/photo-1761839256840-7780a45b85dc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-image: url("../img/album5.jpg");
 
 	/* Full height */
 	height: 100%;
@@ -267,6 +267,27 @@ footer p {
 	/* font-size:20px; */
 	z-index: 100;
 }
+/* Styling Gradasi untuk Tombol */
+.btn-res {
+    /* Warna gradasi: Biru muda (#007bff) ke Hijau (#28a745) */
+    background: #007bff; /* Fallback warna solid untuk browser lama */
+    background-image: linear-gradient(to right, #007bff 0%, #28a745 100%);
+    
+    border: none; /* Hilangkan border standar agar gradasi terlihat mulus */
+    color: white; /* Pastikan teks tombol berwarna putih */
+    padding: 12px 20px; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+    transition: all 0.3s ease; /* Transisi halus untuk efek hover */
+}
+/* Styling Hover untuk Tombol (Gelapkan Gradasi) */
+.btn-res:hover,
+.btn-res:focus {
+    /* Gelapkan sedikit gradasi untuk efek interaktif */
+    background-image: linear-gradient(to right, #0056b3 0%, #1e7e34 100%);
+    opacity: 0.9; /* Alternatif: sedikit transparansi */
+}
 
 .mdc-button {
 	width: 146px;
@@ -301,7 +322,63 @@ footer p {
 .giftfloat {
 	margin-top: 10px;
 }
+/* Styling Slider Container */
+.slider-container {
+    position: relative;
+    padding: 0 40px; /* Ruang untuk tombol */
+}
 
+.slider-wrapper {
+    display: flex;
+    overflow-x: hidden; /* Sembunyikan item yang tidak terlihat */
+    scroll-behavior: smooth; /* Efek geser yang mulus */
+    padding: 10px 0;
+    list-style: none;
+}
+
+/* Styling setiap item (Card Pesan) */
+.slider-item {
+    min-width: 90%; /* Hanya menampilkan satu item (90%) per slide */
+    margin-right: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #507C74; /* Garis dekorasi */
+    box-sizing: border-box;
+}
+
+/* Penyesuaian agar lebih dari satu item terlihat di desktop */
+@media screen and (min-width: 768px) {
+    .slider-item {
+        min-width: calc(50% - 10px); /* Tampilkan dua item (50%) */
+    }
+}
+
+/* Styling Tombol Navigasi */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+#loading-indicator {
+    text-align: center;
+    width: 100%;
+    padding: 50px 0;
+    color: #888;
+}
 /* END GIFT BUTTON */
 /* STYLE GIFT INPUT */
 
